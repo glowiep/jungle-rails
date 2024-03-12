@@ -1,2 +1,21 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1 id="admin-dashboard-h1">Admin Dashboard</h1>
+<div class="admin-dashboard-badge">
+  <button type="button" class="btn btn-primary position-relative">
+    Total Products
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      <%= @products.count %>
+      <span class="visually-hidden">Total Products</span>
+    </span>
+  </button>
+  <div class="admin-dashboard-link"><%= link_to "View All Products", admin_products_path %></div>
+</div>
+
+<div class="admin-dashboard-badge">
+  <button type="button" class="btn btn-primary position-relative">
+    Total Categories
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      <%= @categories.count %>
+      <span class="visually-hidden">Total Categories</span>
+    </span>
+  </button>
+</div>
