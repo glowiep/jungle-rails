@@ -19,6 +19,12 @@ Rails.application.routes.draw do
   end
 
   resources :about, only: [:index, :show]
+  
+  # Routes for signup
+  # Renders a form in the browse
+  get '/signup' => 'users#new'
+  # Receive the form and create a user in our database
+  get '/users' => 'users#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
