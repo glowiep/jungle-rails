@@ -46,6 +46,21 @@
         <li>
           <a class="navbar-dark navbar-nav nav-link" href="<%= about_index_path %>">About</a>
         </li>
+        <% if logged_in? %>
+          <li>
+            Signed in as <%= current_user.email %>
+          </li>
+          <li>
+            <a class="navbar-dark navbar-nav nav-link" href="<%= logout_path %>">Log Out</a>
+          </li>
+        <% else %>
+          <li>
+            <a class="navbar-dark navbar-nav nav-link" href="<%= login_path %>">Log In</a>
+          </li>
+          <li>
+            <a class="navbar-dark navbar-nav nav-link" href="<%= signup_path %>">Sign Up</a>
+          </li>
+        <% end %>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-danger"
