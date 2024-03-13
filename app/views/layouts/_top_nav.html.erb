@@ -43,11 +43,8 @@
         </li> %>
       </ul>
       <ul class="navbar-nav">
-        <li>
-          <a class="navbar-dark navbar-nav nav-link" href="<%= about_index_path %>">About</a>
-        </li>
         <% if logged_in? %>
-          <li>
+          <li class="nav-login-status">
             Signed in as <%= current_user.email %>
           </li>
           <li>
@@ -61,6 +58,9 @@
             <a class="navbar-dark navbar-nav nav-link" href="<%= signup_path %>">Sign Up</a>
           </li>
         <% end %>
+        <li>
+          <a class="navbar-dark navbar-nav nav-link" href="<%= about_index_path %>">About</a>
+        </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-danger"
