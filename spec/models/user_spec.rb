@@ -82,9 +82,8 @@ RSpec.describe User, type: :model do
         password: "123",
         password_confirmation: "123"
       )
-      @user.save
       expect(@user).to_not be_valid
-      # expect(@user.password.size).to be = 3
+      expect(@user.errors.full_messages).to include("Password is too short (minimum is 7 characters)")
     end
 
     it 'emails must be unique' do
